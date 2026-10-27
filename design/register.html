@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daftar Akun Baru - BugarKu</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Outfit & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-surface": "#283044",
+            "tertiary-fixed": "#97f5cc",
+            "on-error-container": "#93000a",
+            "surface": "#faf8ff",
+            "on-primary-container": "#00422b",
+            "inverse-on-surface": "#eef0ff",
+            "on-background": "#131b2e",
+            "surface-container-low": "#f2f3ff",
+            "on-surface": "#131b2e",
+            "secondary": "#9d4300",
+            "on-tertiary-fixed": "#002115",
+            "secondary-fixed-dim": "#ffb690",
+            "on-secondary-fixed-variant": "#783200",
+            "surface-tint": "#006c49",
+            "on-tertiary-fixed-variant": "#00513a",
+            "surface-bright": "#faf8ff",
+            "on-surface-variant": "#3c4a42",
+            "error": "#ba1a1a",
+            "on-error": "#ffffff",
+            "surface-container": "#eaedff",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "on-secondary-fixed": "#341100",
+            "surface-container-highest": "#dae2fd",
+            "primary-container": "#10b981",
+            "on-secondary-container": "#5c2400",
+            "tertiary": "#006c4e",
+            "secondary-container": "#fd761a",
+            "inverse-primary": "#4edea3",
+            "on-tertiary-container": "#00422e",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-high": "#e2e7ff",
+            "error-container": "#ffdad6",
+            "on-primary-fixed": "#002113",
+            "on-primary-fixed-variant": "#005236",
+            "secondary-fixed": "#ffdbca",
+            "primary": "#006c49",
+            "tertiary-container": "#57b48f",
+            "on-tertiary": "#ffffff",
+            "surface-dim": "#d2d9f4",
+            "on-secondary": "#ffffff",
+            "background": "#faf8ff",
+            "primary-fixed-dim": "#4edea3",
+            "outline": "#6c7a71",
+            "surface-variant": "#dae2fd",
+            "primary-fixed": "#6ffbbe",
+            "on-primary": "#ffffff",
+            "outline-variant": "#bbcabf"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin": "2rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-xl-mobile": ["Outfit"],
+            "label-sm": ["Inter"],
+            "headline-xl": ["Outfit"],
+            "label-md": ["Inter"],
+            "headline-lg": ["Outfit"],
+            "body-md": ["Inter"],
+            "headline-sm": ["Outfit"],
+            "body-lg": ["Inter"],
+            "display-lg": ["Outfit"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Outfit"],
+            "label-lg": ["Inter"],
+            "display-lg-mobile": ["Outfit"]
+          },
+          "fontSize": {
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom subtle glow & shadows */
+    .btn-emerald-shadow {
+      box-shadow: 0 8px 16px -4px rgba(16, 185, 129, 0.28);
+    }
+    .card-ambient-shadow {
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.02), 0 8px 24px rgba(15, 23, 42, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Main Container: Split-Screen Desktop / Single Column Mobile -->
+<main class="min-h-screen w-full flex flex-col lg:flex-row bg-surface-container-lowest">
+<!-- SISI KIRI: Form Card Container (50% Desktop) -->
+<div class="w-full lg:w-1/2 flex flex-col justify-between p-6 sm:p-10 lg:p-12 xl:p-16 min-h-screen overflow-y-auto">
+<!-- Top Bar: Logo & Kembali ke Landing Page -->
+<header class="flex items-center justify-between w-full mb-8">
+<a aria-label="BugarKu Beranda" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-primary rounded-lg" href="#">
+<!-- Logo Image Asset -->
+<img alt="Logo BugarKu dengan ikon daun dan kilau segar" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UCo4ev-tmm_6nWEFyw6rzuo0oGkEZZEkQHaGhwL7CIi4WNLkYR331r5gBCbcVMOP3aTIV6LOUqN26sSK0dJG1KH1slqu4tmYaWqT2K1xa51Gt8BSCFFLDkqqKLm0M1BtBCarISSnauYmhepFxfiQp1D18uT7SmzJMJ6pvwkIj7FjLCFlEYhNuIWNmL8qC8sJykgIozZKUqYT-2ZYLya9hChhH5I9IArSF4iuUQrjl-6V6DLpFIhUI10kXT"/>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface bg-surface-container-low hover:bg-surface-container font-label-md text-label-md transition-all duration-150" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span>Kembali ke Beranda</span>
+</a>
+</header>
+<!-- Main Form Section -->
+<div class="w-full max-w-md mx-auto my-auto py-2">
+<!-- Welcome Heading -->
+<div class="mb-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm mb-3">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<span>Aman &amp; Ramah Pemula</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight mb-2">
+            Mulai Langkah Sehatmu Hari Ini
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Daftar gratis dalam hitungan detik. Tanpa ribet, langsung siap bimbingan gerak.
+          </p>
+</div>
+<!-- Form Element -->
+<form class="space-y-4" onsubmit="event.preventDefault();">
+<!-- Input 1: Nama Lengkap -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="full-name">
+              Nama Lengkap
+            </label>
+<div class="relative rounded-xl shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">person</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary transition-all duration-150" id="full-name" placeholder="contoh: Rian Pratama" type="text"/>
+</div>
+</div>
+<!-- Input 2: Email -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="email">
+              Email
+            </label>
+<div class="relative rounded-xl shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+</div>
+<input class="block w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface placeholder:text-outline/70 focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary transition-all duration-150" id="email" placeholder="nama@email.com" type="email"/>
+</div>
+</div>
+<!-- Input 3: Password + Strength Indicator -->
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<label class="block font-label-md text-label-md text-on-surface-variant" for="password">
+                Password
+              </label>
+<span class="font-label-sm text-label-sm text-secondary font-medium">Kekuatan: Sedang</span>
+</div>
+<div class="relative rounded-xl shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 bg-surface-container-lowest border border-outline-variant rounded-xl font-body-md text-body-md text-on-surface tracking-wider focus:outline-none focus:ring-2 focus:ring-primary-container focus:border-primary transition-all duration-150" id="password" type="password" value="bugarku123"/>
+<button aria-label="Tampilkan atau sembunyikan kata sandi" class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-on-surface focus:outline-none" id="togglePassword" type="button">
+<span class="material-symbols-outlined text-[20px]" id="eyeIcon">visibility</span>
+</button>
+</div>
+<!-- Password Strength Bar (4 Segment Bars) -->
+<div class="mt-2 space-y-1.5">
+<div class="grid grid-cols-4 gap-1.5 h-1.5 w-full">
+<!-- Bar 1 & 2 filled, 3rd filled amber, 4th empty -->
+<div class="bg-primary-container rounded-full h-full"></div>
+<div class="bg-primary-container rounded-full h-full"></div>
+<div class="bg-secondary-container rounded-full h-full"></div>
+<div class="bg-outline-variant/50 rounded-full h-full"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">check_circle</span>
+<span>Minimal 8 karakter, huruf &amp; angka</span>
+</p>
+</div>
+</div>
+<!-- Input 4: Konfirmasi Password (Inline Error State) -->
+<div>
+<label class="block font-label-md text-label-md text-error mb-1.5 font-medium" for="confirm-password">
+              Konfirmasi Password
+            </label>
+<div class="relative rounded-xl shadow-sm">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-error">
+<span class="material-symbols-outlined text-[20px]">lock_reset</span>
+</div>
+<input class="block w-full pl-10 pr-10 py-2.5 bg-error-container/30 border border-error rounded-xl font-body-md text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-error transition-all duration-150" id="confirm-password" type="password" value="bugarkuBerbeda"/>
+<div class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-error">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">error</span>
+</div>
+</div>
+<!-- Error helper text -->
+<p class="mt-1.5 font-body-sm text-body-sm text-error flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">priority_high</span>
+<span>Password tidak cocok dengan kata sandi di atas</span>
+</p>
+</div>
+<!-- Checkbox: Persetujuan S&K -->
+<div class="pt-1">
+<label class="flex items-start gap-2.5 cursor-pointer select-none group">
+<input checked="" class="mt-0.5 h-4 w-4 rounded text-primary-container border-outline-variant focus:ring-primary-container focus:ring-offset-0 cursor-pointer" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Saya setuju dengan <a class="text-primary font-medium hover:underline" href="#">Syarat &amp; Ketentuan</a> serta <a class="text-primary font-medium hover:underline" href="#">Kebijakan Privasi</a> BugarKu
+              </span>
+</label>
+</div>
+<!-- Tombol CTA Utama -->
+<div class="pt-2">
+<button class="w-full flex items-center justify-center gap-2 py-3 px-6 rounded-xl bg-primary-container text-on-surface-lowest text-white font-label-lg text-label-lg font-bold btn-emerald-shadow hover:bg-primary transition-all duration-150 active:scale-[0.98] cursor-pointer" type="submit">
+<span>Buat Akun</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</form>
+<!-- Social Login Divider -->
+<div class="relative my-6">
+<div aria-hidden="true" class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant/60"></div>
+</div>
+<div class="relative flex justify-center font-label-md text-label-md">
+<span class="px-3 bg-surface-container-lowest text-on-surface-variant font-medium">atau daftar dengan</span>
+</div>
+</div>
+<!-- Social Buttons Grid -->
+<div class="grid grid-cols-2 gap-3">
+<!-- Google Button -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low font-label-md text-label-md text-on-surface transition-all duration-150 active:scale-[0.98]" type="button">
+<svg class="w-4 h-4" viewbox="0 0 24 24">
+<path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.65v3h3.86c2.26-2.09 3.68-5.17 3.68-9.09z" fill="#4285F4"></path>
+<path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.35 24 12 24z" fill="#34A853"></path>
+<path d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.61H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.39l3.98-3.1z" fill="#FBBC05"></path>
+<path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.26 2.7 1.29 6.61l3.98 3.1c.95-2.85 3.6-4.96 6.73-4.96z" fill="#EA4335"></path>
+</svg>
+<span>Google</span>
+</button>
+<!-- Apple Button -->
+<button class="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl border border-outline-variant bg-surface-container-lowest hover:bg-surface-container-low font-label-md text-label-md text-on-surface transition-all duration-150 active:scale-[0.98]" type="button">
+<svg class="w-4 h-4 fill-current text-on-surface" viewbox="0 0 24 24">
+<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 6.42c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.99.6-2.63 1.35-.57.66-.99 1.73-.85 2.76 1 .08 2.02-.57 2.56-1.26z"></path>
+</svg>
+<span>Apple</span>
+</button>
+</div>
+<!-- Tautan Bawah: Masuk -->
+<div class="mt-8 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Sudah punya akun? 
+            <a class="font-label-lg text-label-lg font-bold text-primary hover:text-on-primary-container ml-1 transition-colors underline decoration-primary-container decoration-2 underline-offset-4" href="#">
+              Masuk
+            </a>
+</p>
+</div>
+</div>
+<!-- Footer Micro-links (Bawah Kiri) -->
+<footer class="pt-6 border-t border-outline-variant/40 flex flex-wrap items-center justify-between text-on-surface-variant font-label-sm text-label-sm gap-2">
+<span>© 2025 BugarKu Nusantara. Hak cipta dilindungi.</span>
+<div class="flex items-center gap-4">
+<a class="hover:text-primary transition-colors" href="#">Bantuan</a>
+<a class="hover:text-primary transition-colors" href="#">Panduan</a>
+</div>
+</footer>
+</div>
+<!-- SISI KANAN: Motivational Photo with Overlay Quote (50% Desktop, Hidden on small mobile) -->
+<div class="hidden lg:flex lg:w-1/2 relative min-h-screen bg-on-background overflow-hidden flex-col justify-between p-12 xl:p-16">
+<!-- Background Photo with Atmospheric Gradient Overlays -->
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105" data-alt="An energetic Indonesian young adult happily stretching and exercising outdoors in a warm sunlit lush green city park in Jakarta. Bright early morning natural sunlight casts a warm golden hue over vibrant green grass and foliage. The subject wears modern comfortable minimalist athletic wear with soft emerald green accents, projecting approachable wellness and vitality. The photographic style is clean, modern, airy, and realistic with soft depth of field." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDI396HxOXrPfp9sCFB1hXgbq4kseisjK_DkcSbrO9--EunvKNL_7MNbKkTip2gmLwLQtM_HcLk9GW6mr91lrLTH3VmYzUGYDiggTmZbUnrqxOcEyMiSm9hRUYtnOjuky3FzI_msWrrqDGy2KAAlKsXITigMdLvPoHpKRqxCWDXJeaQqwtxwlYFDuxaG88GpeLRqsUMgvDIncGqyWbr4t5FflLcDrk8Y5WTJICTHIJqp5cHQUDK8VdJLw')"></div>
+<!-- Gradient Overlays for Readability & Brand Atmosphere -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-background via-on-background/60 to-on-background/20 mix-blend-multiply"></div>
+<div class="absolute inset-0 bg-primary/20 mix-blend-color"></div>
+<!-- Top Overlay Elements: Badge & Floating Stat Pill -->
+<div class="relative z-10 flex items-center justify-between gap-4">
+<!-- Badge Komunitas -->
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest/90 backdrop-blur-md border border-white/20 shadow-lg">
+<span class="flex h-2.5 w-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span class="font-label-md text-label-md font-bold text-on-background">Komunitas BugarKu</span>
+</div>
+<!-- Pill Statistik Mengambang -->
+<div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-on-background/70 backdrop-blur-md border border-white/10 text-white card-ambient-shadow">
+<span class="material-symbols-outlined text-tertiary-fixed text-[18px]" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-label-sm text-label-sm font-medium tracking-wide">
+<strong class="text-tertiary-fixed font-bold">12.000+</strong> pemula telah mulai aktif
+          </span>
+</div>
+</div>
+<!-- Center / Bottom Content: Quote & Testimonial Card -->
+<div class="relative z-10 space-y-8 mt-auto">
+<!-- Big Motivational Quote -->
+<div class="max-w-xl">
+<div class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary-container/20 border border-primary-container/40 text-primary-fixed mb-4">
+<span class="material-symbols-outlined text-[24px]">format_quote</span>
+</div>
+<blockquote class="font-headline-xl text-headline-xl text-white font-semibold leading-snug tracking-tight mb-4">
+            “Tubuh yang sehat bukan dimulai dari olahraga berat, tapi dari niat kecil yang diulang setiap hari.”
+          </blockquote>
+<div class="flex items-center gap-3">
+<div class="h-0.5 w-8 bg-primary-container"></div>
+<p class="font-label-lg text-label-lg text-surface-container-highest font-medium tracking-wide">
+              Coach BugarKu • Master Trainer Pemula
+            </p>
+</div>
+</div>
+<!-- Mini Floating Testimonial Card in Bottom Corner -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest/95 backdrop-blur-md border border-white/40 shadow-2xl flex items-center justify-between gap-4 max-w-sm">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-cover bg-center shrink-0 border border-outline-variant shadow-sm" data-alt="Close up portrait photograph of an Indonesian woman in her late twenties with a refreshed, happy smile after a light workout. Soft natural daylight illuminates her face, expressing comfort, self-confidence, and vitality. Clean background with indoor house plants and soft warm minimalist decor adhering to light mode wellness aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBHwHVAYIpjYc8eZdxjCibDgjwcNAk_FonioIzijOy3YfbM3j0FuignULTc9XAw-w5Cp4jq1kW57GoZQ24-aKKfQLqYmLiZN-bDxYB2RIS1OWWfLgHbVoUAkGP83bQwzFMwN2tVE36wDFXqcZReGeCu_Ky9jbiVjd6j8VYAvXiq1ci25WQ3lilPxgqOym4-zl0buY_BQavETGJC3gplAToIRMyOGj6QGlna0XNx7aITkQWewyePFfMciQ')"></div>
+<div>
+<div class="flex items-center gap-1 text-secondary-container">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold ml-1">5.0</span>
+</div>
+<p class="font-label-md text-label-md font-bold text-on-surface mt-0.5">Siti Nurhaliza, 28 th</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">"Turun 4 kg santai tanpa tersiksa!"</p>
+</div>
+</div>
+<!-- 7-day streak icon indicator from Brand Identity -->
+<div class="px-2.5 py-1.5 rounded-lg bg-surface-container text-secondary font-label-sm text-label-sm font-bold flex items-center gap-1 shrink-0">
+<span>🔥 7 Hari</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Inline Interaction Script: Password Visibility Toggle -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const togglePasswordBtn = document.getElementById('togglePassword');
+      const passwordInput = document.getElementById('password');
+      const eyeIcon = document.getElementById('eyeIcon');
+
+      if (togglePasswordBtn && passwordInput && eyeIcon) {
+        togglePasswordBtn.addEventListener('click', () => {
+          const isPassword = passwordInput.getAttribute('type') === 'password';
+          passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+          eyeIcon.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+      }
+    });
+  </script>
+</body></html>

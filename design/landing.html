@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BugarKu — Latihan Sesuai Kemampuanmu</title>
+<!-- Google Fonts: Inter Tight & Inter for neo-grotesque athletic editorial typography -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            headline: ['"Inter Tight"', 'Helvetica Neue', 'Arial', 'sans-serif'],
+            sans: ['"Inter Tight"', '"Inter"', 'sans-serif'],
+            body: ['"Inter"', 'sans-serif']
+          },
+          colors: {
+            brand: {
+              green: '#10B981',
+              'green-dark': '#047857',
+              orange: '#F97316',
+              navy: '#0F172A',
+              bg: '#E5E7EB',
+              muted: '#64748B'
+            }
+          },
+          letterSpacing: {
+            tighter: '-0.05em',
+            tightest: '-0.07em'
+          }
+        }
+      }
+    }
+  </script>
+<!-- Phosphor / Lucide Icons via inline SVG -->
+<style>
+    .chamfer-tl {
+      clip-path: polygon(48px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 48px);
+    }
+    @media (max-width: 640px) {
+      .chamfer-tl {
+        clip-path: polygon(28px 0%, 100% 0%, 100% 100%, 0% 100%, 0% 28px);
+      }
+    }
+    .clip-corner-card {
+      clip-path: polygon(0% 0%, calc(100% - 32px) 0%, 100% 32px, 100% 100%, 0% 100%);
+    }
+    .watermark-stroke {
+      -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
+      color: transparent;
+    }
+    .watermark-stroke-dark {
+      -webkit-text-stroke: 1px rgba(15, 23, 42, 0.12);
+      color: transparent;
+    }
+    /* Hide scrollbar for carousel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-[#E5E7EB] text-brand-navy font-body antialiased p-3 sm:p-5 md:p-8 min-h-screen selection:bg-brand-orange selection:text-white">
+<!-- OUTER SHELL CONTAINER -->
+<div class="max-w-[1440px] mx-auto bg-white rounded-[24px] sm:rounded-[32px] p-3 sm:p-5 md:p-6 shadow-xl relative overflow-hidden">
+<!-- FLOATING VERTICAL DOCKED PILL MENU (DESKTOP) -->
+<aside aria-label="Quick Navigation Dock" class="hidden lg:flex fixed left-7 xl:left-9 top-1/2 -translate-y-1/2 z-50 flex-col items-center bg-white/90 backdrop-blur-md p-2 rounded-full shadow-2xl border border-slate-200/80 gap-3 transition-transform hover:scale-105 duration-200">
+<!-- Button 1: Menu Navy -->
+<button aria-label="Menu navigasi" class="w-11 h-11 rounded-full bg-brand-navy text-white flex items-center justify-center hover:opacity-90 transition-all shadow-md group relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="absolute left-14 bg-brand-navy text-white text-[11px] font-semibold font-headline px-2.5 py-1 rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition whitespace-nowrap shadow">Menu</span>
+</button>
+<!-- Button 2: Phone Hotline -->
+<button aria-label="Konsultasi langsung" class="w-11 h-11 rounded-full bg-slate-100 hover:bg-slate-200 text-brand-navy flex items-center justify-center transition-all group relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="absolute left-14 bg-brand-navy text-white text-[11px] font-semibold font-headline px-2.5 py-1 rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition whitespace-nowrap shadow">Tanya Pelatih</span>
+</button>
+<!-- Button 3: Help / FAQ -->
+<button aria-label="Bantuan dan Panduan" class="w-11 h-11 rounded-full bg-slate-100 hover:bg-slate-200 text-brand-navy flex items-center justify-center transition-all group relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="absolute left-14 bg-brand-navy text-white text-[11px] font-semibold font-headline px-2.5 py-1 rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition whitespace-nowrap shadow">Pusat Bantuan</span>
+</button>
+<!-- Button 4: Double Chevron Orange -->
+<button aria-label="Scroll cepat atau jelajahi" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center hover:bg-orange-600 transition-all shadow-md group relative">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<span class="absolute left-14 bg-brand-navy text-white text-[11px] font-semibold font-headline px-2.5 py-1 rounded-md opacity-0 pointer-events-none group-hover:opacity-100 transition whitespace-nowrap shadow">Jelajahi Fitur</span>
+</button>
+</aside>
+<!-- MOBILE FLOATING ACTION BUTTON (DOCK BOTTOM-RIGHT) -->
+<aside aria-label="Quick Action Mobile" class="lg:hidden fixed bottom-6 right-6 z-50">
+<button aria-label="Menu Aksi Cepat" class="w-13 h-13 p-3.5 bg-brand-orange text-white rounded-full shadow-2xl flex items-center justify-center border-2 border-white active:scale-95 transition">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</aside>
+<!-- ============================================================ -->
+<!-- SECTION 1: HERO CARD (FULL-BLEED PHOTO CARD) -->
+<!-- ============================================================ -->
+<header class="relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden min-h-[580px] lg:h-[620px] flex flex-col justify-between p-5 sm:p-8 lg:p-12 text-white shadow-2xl">
+<!-- Background Image with Gradient Overlay -->
+<div class="absolute inset-0 z-0">
+<img alt="Latihan fisik atletik outdoor pemuda Indonesia saat golden hour di lapangan rumput hijau" class="w-full h-full object-cover object-center transform scale-105" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<!-- Editorial Darkened Gradient Overlay on the left -->
+<div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/75 to-black/35"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-black/40"></div>
+</div>
+<!-- TOP TRANSPARENT NAVBAR -->
+<nav class="relative z-20 flex items-center justify-between gap-4 pb-6 border-b border-white/10">
+<!-- Left Links (Small Uppercase) -->
+<div class="hidden md:flex items-center gap-6 lg:gap-8 text-[12px] tracking-[0.14em] font-semibold font-headline">
+<a class="text-white/80 hover:text-white transition" href="#fitur">FITUR</a>
+<a class="text-brand-orange font-bold transition flex items-center gap-1" href="#program">
+            PROGRAM
+            <span class="w-1.5 h-1.5 rounded-full bg-brand-orange inline-block"></span>
+</a>
+<a class="text-white/80 hover:text-white transition" href="#cara-kerja">CARA KERJA</a>
+<a class="text-white/80 hover:text-white transition" href="#nutrisi">NUTRISI</a>
+</div>
+<!-- Center Logo Minimal White Wordmark -->
+<div class="flex items-center gap-2">
+<a class="font-headline font-black text-2xl sm:text-3xl tracking-tight text-white flex items-center gap-1.5" href="#">
+<span class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-brand-green flex items-center justify-center text-white text-base font-bold shadow-md">
+<svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<span>Bugar<span class="text-brand-green">Ku</span></span>
+</a>
+</div>
+<!-- Right Side: Search Pill, Masuk link, Bell Icon + Mobile Hamburger -->
+<div class="flex items-center gap-3 sm:gap-5">
+<!-- Search Pill -->
+<div class="hidden sm:flex items-center bg-white/15 backdrop-blur-md rounded-full px-3.5 py-1.5 border border-white/20 text-white placeholder-white/60 focus-within:bg-white/25 transition">
+<svg class="w-4 h-4 text-white/70 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<input class="bg-transparent text-[13px] text-white placeholder-white/65 focus:outline-none w-28 lg:w-36 font-headline font-medium" placeholder="Cari latihan..." type="text"/>
+</div>
+<!-- Masuk text link -->
+<a class="text-[13px] font-headline font-semibold text-white/90 hover:text-white transition" href="#">Masuk</a>
+<!-- Bell notification icon -->
+<button aria-label="Notifikasi" class="relative w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-brand-orange ring-2 ring-brand-navy"></span>
+</button>
+<!-- Mobile Hamburger -->
+<button aria-label="Buka menu" class="md:hidden w-8 h-8 flex items-center justify-center text-white">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</nav>
+<!-- MAIN HERO BODY -->
+<div class="relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end my-auto py-6 lg:py-8">
+<!-- LEFT COLUMN: Headline & CTA -->
+<div class="lg:col-span-8 flex flex-col justify-center">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/20 backdrop-blur-md border border-brand-green/40 text-emerald-300 text-[11px] font-headline font-bold uppercase tracking-wider mb-4 w-fit">
+<span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+            Edisi Khusus Pemula Indonesia
+          </div>
+<!-- HUGE BOLD HEADLINE (Neo-grotesque, very tight letter spacing, tight leading) -->
+<h1 class="font-headline font-black text-[44px] sm:text-[68px] lg:text-[88px] xl:text-[96px] leading-[0.92] tracking-tightest uppercase text-white mb-5 drop-shadow-sm">
+            Latihan Sesuai<br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-slate-200">Kemampuanmu</span>
+</h1>
+<!-- Short paragraph (max 3 lines) -->
+<p class="text-slate-200 text-sm sm:text-base lg:text-lg max-w-xl font-body leading-relaxed mb-7 font-normal">
+            Program latihan personal berdasarkan tujuan, alat yang kamu punya, dan kondisi tubuhmu. Mulai dari nol, tanpa bingung.
+          </p>
+<!-- Buttons -->
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center justify-center px-7 sm:px-9 py-3.5 sm:py-4 rounded-full bg-white text-brand-navy font-headline font-bold text-sm sm:text-base hover:bg-slate-100 hover:shadow-lg transition-all duration-150 transform hover:-translate-y-0.5" href="#daftar">
+              Daftar Gratis Hari Ini
+            </a>
+<a aria-label="Lanjutkan pendaftaran" class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white text-brand-navy flex items-center justify-center hover:bg-slate-100 hover:shadow-lg transition-all duration-150 transform hover:-translate-y-0.5" href="#daftar">
+<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</a>
+<span class="text-xs text-white/70 font-headline ml-2">✓ Bebas biaya selamanya</span>
+</div>
+</div>
+<!-- RIGHT COLUMN: Floating frosted-glass cards -->
+<div class="lg:col-span-4 flex flex-col gap-4 items-start lg:items-end">
+<!-- Top-right floating frosted-glass card -->
+<div class="w-full sm:w-auto lg:max-w-xs bg-white/15 backdrop-blur-xl border border-white/25 p-3.5 sm:p-4 rounded-[16px] shadow-2xl flex items-center gap-3.5 transition hover:bg-white/20">
+<div class="relative w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-slate-800">
+<img alt="Video thumbnail latihan santai di rumah" class="w-full h-full object-cover" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+<span class="w-7 h-7 rounded-full bg-brand-orange text-white flex items-center justify-center shadow">
+<svg class="w-3.5 h-3.5 translate-x-0.5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</span>
+</div>
+</div>
+<div>
+<span class="text-[10px] font-headline font-bold uppercase tracking-wider text-brand-orange bg-white/20 px-2 py-0.5 rounded-full inline-block mb-1">Rekomendasi</span>
+<p class="text-[13px] font-headline font-semibold text-white leading-snug">
+                Latihan 15 Menit di Rumah, Cocok untuk Pemula
+              </p>
+</div>
+</div>
+<!-- Bottom-right floating frosted-glass pill tags (2 rows) -->
+<div class="flex flex-col gap-2 w-full lg:items-end">
+<div class="flex flex-wrap gap-2">
+<span class="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-headline font-semibold hover:bg-white/25 transition">Turun Berat Badan</span>
+<span class="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-headline font-semibold hover:bg-white/25 transition">Bentuk Otot</span>
+<span class="px-3.5 py-1.5 rounded-full bg-brand-orange/40 backdrop-blur-md border border-brand-orange/60 text-white text-xs font-headline font-semibold">Tanpa Alat</span>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-headline font-semibold hover:bg-white/25 transition">Latihan di Rumah</span>
+<span class="px-3.5 py-1.5 rounded-full bg-brand-green/35 backdrop-blur-md border border-brand-green/60 text-white text-xs font-headline font-semibold">Pemula</span>
+<span class="px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-headline font-semibold hover:bg-white/25 transition">Gym</span>
+</div>
+</div>
+</div>
+</div>
+<!-- HERO BOTTOM WATERMARK -->
+<div class="relative z-10 w-full overflow-hidden pt-2 border-t border-white/10 mt-4 flex flex-col justify-end">
+<span class="text-[10px] sm:text-[11px] font-headline font-bold uppercase tracking-[0.2em] text-white/50 mb-0">Gratis Selamanya</span>
+<div class="w-full select-none pointer-events-none -mb-3 sm:-mb-6">
+<span class="font-headline font-black text-[60px] sm:text-[110px] md:text-[140px] lg:text-[180px] leading-none tracking-tightest watermark-stroke block uppercase whitespace-nowrap">
+            BugarKu
+          </span>
+</div>
+</div>
+</header>
+<!-- ============================================================ -->
+<!-- SECTION 2: "JANGAN KETINGGALAN" (WHITE BACKGROUND) -->
+<!-- ============================================================ -->
+<section class="py-12 sm:py-16 px-2 sm:px-6 relative border-b border-slate-100" id="fitur">
+<div class="flex flex-col">
+<!-- Huge thin-weight navy word "SEHAT" aligned right (shrinks to 80px centered on mobile) -->
+<div class="w-full text-center sm:text-right overflow-hidden select-none">
+<span class="font-headline font-extralight tracking-tightest text-[80px] sm:text-[120px] md:text-[150px] lg:text-[170px] leading-none text-brand-navy block uppercase text-slate-900/90">
+            SEHAT
+          </span>
+</div>
+<!-- Row: Left statement, Right CTA with arrow -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-2 sm:mt-0 pt-4 border-t border-slate-200/80">
+<div class="flex items-center gap-2">
+<span class="text-brand-orange font-mono font-bold text-lg">//</span>
+<p class="font-headline font-medium text-base sm:text-lg text-brand-navy tracking-tight">
+              Kamu rugi kalau belum tahu ini.
+            </p>
+</div>
+<a class="group inline-flex items-center gap-2 font-headline font-bold text-sm sm:text-base text-brand-navy hover:text-brand-orange transition" href="#program">
+<span>Fitur baru, semangat baru</span>
+<span class="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-brand-orange group-hover:text-white flex items-center justify-center transition-all duration-200">
+              →
+            </span>
+</a>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SECTION 3: FEATURE ROW (DASHED CARD + CHAMFERED PHOTO) -->
+<!-- ============================================================ -->
+<section class="py-10 sm:py-14 px-2 sm:px-6">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+<!-- LEFT: Card with dashed border & clipped corner -->
+<div class="lg:col-span-5 border-2 border-dashed border-slate-300 rounded-[24px] p-6 sm:p-9 flex flex-col justify-between clip-corner-card bg-slate-50/60 hover:border-brand-orange/60 transition-colors duration-200 relative">
+<div class="flex items-center justify-between mb-8">
+<span class="px-3 py-1 rounded-md bg-brand-navy text-white text-[11px] font-headline font-bold uppercase tracking-wider">
+              Eksklusif Pemula
+            </span>
+<span class="w-8 h-8 rounded-full border border-slate-300 flex items-center justify-center text-slate-500 font-mono text-xs">
+              01
+            </span>
+</div>
+<div class="my-auto">
+<p class="font-headline font-black text-xl sm:text-2xl lg:text-[22px] tracking-tight text-brand-navy uppercase leading-snug">
+              Setiap kali kamu buka BugarKu, ada hal baru: latihan baru, saran baru, target baru. Jangan biarkan orang lain duluan.
+            </p>
+</div>
+<div class="pt-8 border-t border-slate-200 flex items-center justify-between mt-6">
+<span class="text-xs font-headline font-medium text-slate-500">Pembaruan sistem setiap 05:00 WIB</span>
+<span class="text-brand-green font-bold text-xs uppercase font-headline">Aktif Hari Ini ●</span>
+</div>
+</div>
+<!-- RIGHT: Wide photo with chamfered top-left corner -->
+<div class="lg:col-span-7 relative min-h-[360px] sm:min-h-[420px] rounded-[24px] overflow-hidden group shadow-lg">
+<div class="w-full h-full chamfer-tl overflow-hidden relative">
+<img alt="Person using resistance band at home workout in a bright minimalist living room" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg">
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-black/20"></div>
+<!-- Label at top-left -->
+<div class="absolute top-6 left-6 sm:top-8 sm:left-8">
+<span class="inline-block bg-brand-navy/90 backdrop-blur-md text-white font-headline font-extrabold text-xs sm:text-sm tracking-wider uppercase px-4 py-2 rounded-lg border border-white/20 shadow-md">
+                LATIHAN DI RUMAH
+              </span>
+</div>
+<!-- Bottom badge info -->
+<div class="absolute bottom-6 left-6 sm:bottom-8 sm:left-8 right-6 flex items-end justify-between">
+<div>
+<p class="text-white font-headline font-bold text-lg sm:text-xl">Latihan Fleksibel Tanpa Alat Mahal</p>
+<p class="text-slate-300 text-xs sm:text-sm">Gunakan karet resistance band atau berat tubuh sendiri.</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-white text-brand-navy flex items-center justify-center font-bold text-sm shadow hover:bg-brand-green hover:text-white transition">
+                ↗
+              </span>
+</div>
+</img></div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SECTION 4: CHIP ROW (THREE LIGHT GRAY ROUNDED BOXES) -->
+<!-- ============================================================ -->
+<section class="py-6 sm:py-8 px-2 sm:px-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+<!-- Box 1: Kalkulator BMI -->
+<a class="group bg-slate-100 hover:bg-slate-200/90 rounded-[20px] p-5 sm:p-6 flex items-center justify-between border border-slate-200/70 transition-all duration-150" href="#kalkulator">
+<span class="font-headline font-extrabold text-sm sm:text-base tracking-tight text-brand-navy group-hover:text-brand-orange transition">
+            KALKULATOR BMI →
+          </span>
+<span class="inline-flex items-center gap-1.5 bg-white text-brand-navy px-3 py-1 rounded-full text-[11px] font-headline font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-brand-orange"></span>
+            BARU
+          </span>
+</a>
+<!-- Box 2: Sesuai Alat Kamu -->
+<a class="group bg-slate-100 hover:bg-slate-200/90 rounded-[20px] p-5 sm:p-6 flex items-center justify-between border border-slate-200/70 transition-all duration-150" href="#alat">
+<span class="font-headline font-extrabold text-sm sm:text-base tracking-tight text-brand-navy group-hover:text-brand-orange transition">
+            SESUAI ALAT KAMU →
+          </span>
+<span class="inline-flex items-center gap-1.5 bg-white text-brand-navy px-3 py-1 rounded-full text-[11px] font-headline font-bold shadow-sm">
+<span class="w-2 h-2 rounded-full bg-brand-green"></span>
+            BARU
+          </span>
+</a>
+<!-- Box 3: Blue-green pill button DAFTAR SEKARANG + Black double-chevron button -->
+<div class="bg-slate-100 rounded-[20px] p-2.5 sm:p-3 flex items-center justify-between gap-3 border border-slate-200/70">
+<a class="flex-1 bg-brand-green hover:bg-brand-green-dark text-white text-center font-headline font-extrabold text-xs sm:text-sm tracking-wider uppercase py-3.5 px-4 rounded-full transition shadow-md" href="#daftar">
+            DAFTAR SEKARANG
+          </a>
+<button aria-label="Aksi lanjut pendaftaran" class="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:bg-brand-navy transition flex-shrink-0 shadow">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 5l7 7-7 7M5 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SECTION 5: PROGRAM PHOTO GRID (3 LARGE PHOTOS, ROUNDED 20PX) -->
+<!-- ============================================================ -->
+<section class="py-10 sm:py-14 px-2 sm:px-6" id="program">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+<div>
+<span class="text-brand-orange font-headline font-bold text-xs uppercase tracking-widest">PILIHAN TERBAIK</span>
+<h2 class="font-headline font-black text-2xl sm:text-4xl uppercase tracking-tight text-brand-navy">
+            Program Latihan Paling Diminati
+          </h2>
+</div>
+<p class="text-slate-500 font-body text-xs sm:text-sm max-w-xs">
+          Dirancang khusus untuk adaptasi otot tanpa risiko cedera bagi pemula.
+        </p>
+</div>
+<!-- Photo Grid: Desktop 3 columns equal height, Mobile horizontal swipe carousel -->
+<div class="flex lg:grid lg:grid-cols-3 gap-5 sm:gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-4 lg:pb-0">
+<!-- Photo 1: Dumbbells on gym floor -> Muscle Gain -->
+<div class="min-w-[280px] sm:min-w-[340px] lg:min-w-0 flex-1 snap-start relative h-[420px] sm:h-[460px] rounded-[20px] overflow-hidden group shadow-md flex flex-col justify-between p-5 sm:p-6 text-white">
+<img alt="Dumbbells on gym floor" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-black/30 to-black/20"></div>
+<!-- Top badge -->
+<div class="relative z-10 flex justify-between items-center">
+<span class="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-headline font-bold uppercase tracking-wider text-white">
+              Beban Ringan
+            </span>
+<span class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
+              ★ 4.9
+            </span>
+</div>
+<!-- Bottom: Label & pill duration -->
+<div class="relative z-10">
+<h3 class="font-headline font-black text-2xl sm:text-3xl uppercase tracking-tight text-white mb-3">
+              Muscle Gain
+            </h3>
+<span class="inline-block bg-white text-brand-navy font-headline font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+              Pemula · 30 menit
+            </span>
+</div>
+</div>
+<!-- Photo 2: Person doing yoga/stretching -> Fat Loss di Rumah -->
+<div class="min-w-[280px] sm:min-w-[340px] lg:min-w-0 flex-1 snap-start relative h-[420px] sm:h-[460px] rounded-[20px] overflow-hidden group shadow-md flex flex-col justify-between p-5 sm:p-6 text-white">
+<img alt="Person doing yoga and stretching at home" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-black/30 to-black/20"></div>
+<div class="relative z-10 flex justify-between items-center">
+<span class="px-3 py-1 rounded-full bg-brand-orange/80 backdrop-blur-md text-[11px] font-headline font-bold uppercase tracking-wider text-white">
+              Favorit 1.4k User
+            </span>
+<span class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
+              ★ 5.0
+            </span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline font-black text-2xl sm:text-3xl uppercase tracking-tight text-white mb-3">
+              Fat Loss di Rumah
+            </h3>
+<span class="inline-block bg-white text-brand-navy font-headline font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+              Pemula · 20 menit
+            </span>
+</div>
+</div>
+<!-- Photo 3: Runner on track -> Stamina Pemula -->
+<div class="min-w-[280px] sm:min-w-[340px] lg:min-w-0 flex-1 snap-start relative h-[420px] sm:h-[460px] rounded-[20px] overflow-hidden group shadow-md flex flex-col justify-between p-5 sm:p-6 text-white">
+<img alt="Runner on running track outdoors" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" src="https://www.gstatic.com/labs-code/stitch/stitch-placeholder-300x300.svg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-black/30 to-black/20"></div>
+<div class="relative z-10 flex justify-between items-center">
+<span class="px-3 py-1 rounded-full bg-brand-green/80 backdrop-blur-md text-[11px] font-headline font-bold uppercase tracking-wider text-white">
+              Kardio Ringan
+            </span>
+<span class="w-8 h-8 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white">
+              ★ 4.8
+            </span>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline font-black text-2xl sm:text-3xl uppercase tracking-tight text-white mb-3">
+              Stamina Pemula
+            </h3>
+<span class="inline-block bg-white text-brand-navy font-headline font-bold text-xs px-3.5 py-1.5 rounded-full shadow-md">
+              Pemula · 15 menit
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SECTION 6: HOW IT WORKS (4 NUMBERED STEPS) -->
+<!-- ============================================================ -->
+<section class="py-12 sm:py-16 px-2 sm:px-6 border-t border-slate-100" id="cara-kerja">
+<div class="mb-10 sm:mb-12">
+<span class="text-brand-green font-headline font-bold text-xs uppercase tracking-widest">LANGKAH SEDERHANA</span>
+<h2 class="font-headline font-black text-2xl sm:text-4xl uppercase tracking-tight text-brand-navy mt-1">
+          Cara Kerja BugarKu
+        </h2>
+<p class="text-slate-500 text-sm mt-1">4 langkah cepat tanpa ribet untuk memulai kebiasaan sehatmu.</p>
+</div>
+<!-- 4 Numbered steps with thin dividing lines -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-slate-200">
+<!-- Step 1 -->
+<div class="lg:px-6 first:pl-0 flex flex-col justify-between">
+<div>
+<span class="font-headline font-black text-4xl sm:text-5xl text-brand-navy block tracking-tightest mb-2">
+              01
+            </span>
+<h3 class="font-headline font-extrabold text-lg text-brand-navy uppercase mb-2">
+              Isi Profil
+            </h3>
+<p class="text-slate-500 font-body text-xs sm:text-sm leading-relaxed">
+              Masukkan data fisik awal, tinggi, berat badan, serta riwayat keluhan sendi atau lutut.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<span class="text-[11px] font-headline font-semibold text-brand-orange uppercase">Estimasi 1 Menit</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="lg:px-6 flex flex-col justify-between">
+<div>
+<span class="font-headline font-black text-4xl sm:text-5xl text-brand-navy block tracking-tightest mb-2">
+              02
+            </span>
+<h3 class="font-headline font-extrabold text-lg text-brand-navy uppercase mb-2">
+              Pilih Tujuan
+            </h3>
+<p class="text-slate-500 font-body text-xs sm:text-sm leading-relaxed">
+              Tentukan target: turunkan berat badan, bangun stamina aktif, atau bentuk kebiasaan gerak harian.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<span class="text-[11px] font-headline font-semibold text-brand-green uppercase">Bebas Ganti Kapan Saja</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="lg:px-6 flex flex-col justify-between">
+<div>
+<span class="font-headline font-black text-4xl sm:text-5xl text-brand-navy block tracking-tightest mb-2">
+              03
+            </span>
+<h3 class="font-headline font-extrabold text-lg text-brand-navy uppercase mb-2">
+              Dapat Program
+            </h3>
+<p class="text-slate-500 font-body text-xs sm:text-sm leading-relaxed">
+              Sistem menyusun jadwal latihan otomatis dengan video panduan gerakan yang aman bagi pemula.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<span class="text-[11px] font-headline font-semibold text-brand-navy uppercase">100% Ramah Sendi</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="lg:px-6 last:pr-0 flex flex-col justify-between">
+<div>
+<span class="font-headline font-black text-4xl sm:text-5xl text-brand-navy block tracking-tightest mb-2">
+              04
+            </span>
+<h3 class="font-headline font-extrabold text-lg text-brand-navy uppercase mb-2">
+              Pantau Progres
+            </h3>
+<p class="text-slate-500 font-body text-xs sm:text-sm leading-relaxed">
+              Catat streak harian, evaluasi grafik penurunan berat badan, dan rayakan pencapaian kecilmu.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-slate-100">
+<span class="text-[11px] font-headline font-semibold text-brand-orange uppercase">Lencana &amp; Streak</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SECTION 7: MOTIVATION + CTA CARD -->
+<!-- ============================================================ -->
+<section class="py-6 sm:py-10 px-2 sm:px-6" id="daftar">
+<div class="w-full rounded-[24px] sm:rounded-[28px] bg-brand-navy text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl flex flex-col items-center text-center">
+<!-- Background aesthetic circular blur and watermark -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-green/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -left-24 w-96 h-96 rounded-full bg-brand-orange/20 blur-3xl pointer-events-none"></div>
+<span class="text-brand-orange font-headline font-extrabold text-xs tracking-widest uppercase mb-4 px-3 py-1 rounded-full bg-brand-orange/20 border border-brand-orange/40">
+          KUTIPAN HARI INI
+        </span>
+<!-- Large quote -->
+<blockquote class="font-headline font-extrabold text-2xl sm:text-4xl lg:text-5xl max-w-4xl leading-tight sm:leading-tight tracking-tight mb-8">
+          “Satu langkah kecil hari ini lebih baik daripada seratus rencana besok.”
+        </blockquote>
+<p class="text-slate-300 font-body text-sm sm:text-base max-w-lg mb-8 font-normal">
+          Jangan tunggu hari Senin atau awal bulan. Mulai sekarang bersama ribuan pemula lainnya di seluruh Indonesia.
+        </p>
+<!-- Orange pill button -->
+<div class="flex flex-col sm:flex-row items-center gap-4">
+<a class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-brand-orange text-white font-headline font-extrabold text-base hover:bg-orange-600 hover:shadow-xl hover:scale-105 transition-all duration-200" href="#">
+            Mulai Sekarang
+          </a>
+<a class="text-xs font-headline font-semibold text-slate-300 hover:text-white underline underline-offset-4 transition" href="#cara-kerja">
+            Pelajari Cara Kerja Lebih Lanjut
+          </a>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- FOOTER: NAVY BACKGROUND -->
+<!-- ============================================================ -->
+<footer class="mt-8 rounded-[24px] bg-brand-navy text-white p-8 sm:p-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 pb-10 border-b border-slate-800">
+<!-- Left: Logo & Bio -->
+<div class="md:col-span-5">
+<div class="flex items-center gap-2 mb-4">
+<span class="w-8 h-8 rounded-lg bg-brand-green flex items-center justify-center text-white font-bold">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path></svg>
+</span>
+<span class="font-headline font-black text-2xl tracking-tight">Bugar<span class="text-brand-green">Ku</span></span>
+</div>
+<p class="text-slate-400 text-xs sm:text-sm font-body max-w-sm leading-relaxed mb-6">
+            Platform kebugaran &amp; hidup sehat nomor #1 di Indonesia yang dirancang khusus untuk pemula. Membangun kebiasaan olahraga yang konsisten, aman, dan tanpa intimidasi.
+          </p>
+<div class="flex items-center gap-3 text-slate-400">
+<!-- Instagram -->
+<a aria-label="Instagram" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-orange hover:text-white flex items-center justify-center transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+</a>
+<!-- TikTok -->
+<a aria-label="TikTok" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-brand-green hover:text-white flex items-center justify-center transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64c.298-.002.595.042.88.13V9.4a6.33 6.33 0 00-1-.08A6.34 6.34 0 003 15.66a6.34 6.34 0 0010.82 4.48 6.34 6.34 0 001.97-4.48V8.65a8.28 8.28 0 004.8 1.54V6.69z"></path></svg>
+</a>
+<!-- YouTube -->
+<a aria-label="YouTube" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-red-600 hover:text-white flex items-center justify-center transition" href="#">
+<svg class="w-4 h-4" fill="currentColor" viewbox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+</a>
+</div>
+</div>
+<!-- Middle: Links -->
+<div class="md:col-span-4 grid grid-cols-2 gap-4">
+<div>
+<h4 class="font-headline font-bold text-xs uppercase tracking-wider text-slate-300 mb-3">Eksplorasi</h4>
+<ul class="space-y-2 text-xs font-headline text-slate-400">
+<li><a class="hover:text-white transition" href="#program">Program Latihan</a></li>
+<li><a class="hover:text-white transition" href="#fitur">Latihan di Rumah</a></li>
+<li><a class="hover:text-white transition" href="#kalkulator">Kalkulator BMI</a></li>
+<li><a class="hover:text-white transition" href="#nutrisi">Panduan Nutrisi Lokal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-bold text-xs uppercase tracking-wider text-slate-300 mb-3">Bantuan &amp; Legal</h4>
+<ul class="space-y-2 text-xs font-headline text-slate-400">
+<li><a class="hover:text-white transition" href="#">Pusat Bantuan</a></li>
+<li><a class="hover:text-white transition" href="#">Panduan Pemula</a></li>
+<li><a class="hover:text-white transition" href="#">Kebijakan Privasi</a></li>
+<li><a class="hover:text-white transition" href="#">Syarat &amp; Ketentuan</a></li>
+</ul>
+</div>
+</div>
+<!-- Right: Disclaimer Box -->
+<div class="md:col-span-3 bg-slate-800/60 p-4 rounded-xl border border-slate-700/60 flex flex-col justify-between">
+<div>
+<span class="text-[10px] font-headline font-bold text-brand-orange uppercase tracking-wider block mb-1">Catatan Kesehatan Penting</span>
+<p class="text-[11px] text-slate-400 leading-relaxed font-body">
+              "Saran kebugaran ini bukan pengganti dokter atau pelatih profesional."
+            </p>
+</div>
+<p class="text-[10px] text-slate-500 mt-4">
+            Konsultasikan dengan tenaga medis bila memiliki riwayat hipertensi atau cedera kronis.
+          </p>
+</div>
+</div>
+<!-- Copyright bottom -->
+<div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 font-headline">
+<p>© 2025 BugarKu Indonesia. Dirancang ramah untuk setiap langkah awal kebugaran.</p>
+<p class="text-[11px]">Dibuat dengan semangat hidup aktif untuk masyarakat Indonesia.</p>
+</div>
+</footer>
+</div>
+</body>
+</html>

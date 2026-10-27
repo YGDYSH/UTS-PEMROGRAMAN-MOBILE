@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BugarKu - Onboarding Kebugaran Pemula</title>
+<!-- Google Fonts: Outfit & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration verbatim from Design System -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-fixed": "#002115",
+            "on-tertiary-container": "#00422e",
+            "inverse-primary": "#4edea3",
+            "surface-container-highest": "#dae2fd",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f2f3ff",
+            "outline-variant": "#bbcabf",
+            "on-error-container": "#93000a",
+            "secondary-container": "#fd761a",
+            "primary": "#006c49",
+            "surface-tint": "#006c49",
+            "on-secondary-fixed": "#341100",
+            "on-surface-variant": "#3c4a42",
+            "on-primary-fixed": "#002113",
+            "surface-bright": "#faf8ff",
+            "tertiary": "#006c4e",
+            "surface": "#faf8ff",
+            "surface-container-high": "#e2e7ff",
+            "secondary-fixed": "#ffdbca",
+            "on-primary-container": "#00422b",
+            "on-secondary-container": "#5c2400",
+            "primary-fixed-dim": "#4edea3",
+            "tertiary-container": "#57b48f",
+            "primary-fixed": "#6ffbbe",
+            "inverse-on-surface": "#eef0ff",
+            "outline": "#6c7a71",
+            "secondary-fixed-dim": "#ffb690",
+            "error-container": "#ffdad6",
+            "tertiary-fixed": "#97f5cc",
+            "on-background": "#131b2e",
+            "surface-dim": "#d2d9f4",
+            "primary-container": "#10b981",
+            "error": "#ba1a1a",
+            "on-tertiary-fixed-variant": "#00513a",
+            "surface-container": "#eaedff",
+            "background": "#faf8ff",
+            "inverse-surface": "#283044",
+            "on-surface": "#131b2e",
+            "on-primary-fixed-variant": "#005236",
+            "on-tertiary": "#ffffff",
+            "on-error": "#ffffff",
+            "secondary": "#9d4300",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#783200",
+            "surface-variant": "#dae2fd",
+            "tertiary-fixed-dim": "#7bd8b1",
+            "on-primary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "space-xs": "0.25rem",
+            "margin": "2rem",
+            "margin-sm": "1rem",
+            "space-xl": "2rem",
+            "space-sm": "0.5rem",
+            "gutter-sm": "1rem",
+            "gutter": "1.5rem",
+            "space-md": "1rem"
+          },
+          "fontFamily": {
+            "display-lg": ["Outfit"],
+            "headline-xl-mobile": ["Outfit"],
+            "headline-sm": ["Outfit"],
+            "headline-lg": ["Outfit"],
+            "headline-xl": ["Outfit"],
+            "display-lg-mobile": ["Outfit"],
+            "body-lg": ["Inter"],
+            "label-md": ["Inter"],
+            "label-sm": ["Inter"],
+            "body-sm": ["Inter"],
+            "headline-md": ["Outfit"],
+            "body-md": ["Inter"],
+            "label-lg": ["Inter"]
+          },
+          "fontSize": {
+            "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-shadow-ambient {
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.02), 0 8px 24px rgba(15, 23, 42, 0.04);
+    }
+    .custom-shadow-glow {
+      box-shadow: 0 8px 16px -4px rgba(16, 185, 129, 0.25);
+    }
+    .custom-shadow-orange {
+      box-shadow: 0 8px 16px -4px rgba(249, 115, 22, 0.28);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col justify-between selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TOP MINIMAL HEADER -->
+<header class="sticky top-0 z-30 bg-surface-container-lowest/95 backdrop-blur-md border-b border-outline-variant/30">
+<div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+<!-- Logo Branding -->
+<div class="flex items-center gap-3">
+<img alt="BugarKu Logo" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UCo4ev-tmm_6nWEFyw6rzuo0oGkEZZEkQHaGhwL7CIi4WNLkYR331r5gBCbcVMOP3aTIV6LOUqN26sSK0dJG1KH1slqu4tmYaWqT2K1xa51Gt8BSCFFLDkqqKLm0M1BtBCarISSnauYmhepFxfiQp1D18uT7SmzJMJ6pvwkIj7FjLCFlEYhNuIWNmL8qC8sJykgIozZKUqYT-2ZYLya9hChhH5I9IArSF4iuUQrjl-6V6DLpFIhUI10kXT"/>
+<div class="hidden sm:block border-l border-outline-variant/40 pl-3">
+<span class="text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider block">Program Pemula</span>
+<span class="text-label-md font-label-md text-primary font-bold">Langkah 1 dari 4 Selesai</span>
+</div>
+</div>
+<!-- Right Action & Save Indicator -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-label-md font-label-md text-on-surface-variant bg-surface-container-low px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Tersimpan otomatis</span>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-xl text-label-md font-label-md font-semibold text-on-surface border border-outline-variant/50 hover:bg-surface-container-low transition-colors duration-150" type="button">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+<span>Simpan &amp; Lanjutkan Nanti</span>
+</button>
+</div>
+</div>
+</header>
+<!-- MAIN WIZARD CONTAINER -->
+<main class="flex-1 max-w-7xl mx-auto w-full px-6 py-8">
+<!-- PROGRESS STEPPER BAR -->
+<section class="mb-10">
+<div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/40 custom-shadow-ambient">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 relative">
+<!-- Step 1 (Active) -->
+<div class="flex items-center gap-3.5 w-full md:w-auto z-10 cursor-pointer">
+<div class="w-10 h-10 rounded-xl bg-primary-container text-surface-container-lowest flex items-center justify-center font-headline-sm font-bold shadow-md">
+              1
+            </div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-label-md font-label-md font-bold text-primary">Langkah 1</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Aktif</span>
+</div>
+<p class="text-label-lg font-label-lg text-on-surface font-semibold">1. Data Diri</p>
+</div>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-primary-container mx-4"></div>
+<!-- Step 2 -->
+<div class="flex items-center gap-3.5 w-full md:w-auto z-10 opacity-75 hover:opacity-100 transition-opacity">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant border border-outline-variant/60 flex items-center justify-center font-headline-sm font-semibold">
+              2
+            </div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Langkah 2</span>
+<p class="text-label-lg font-label-lg text-on-surface font-medium">2. Tujuan &amp; Target</p>
+</div>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-surface-container mx-4"></div>
+<!-- Step 3 -->
+<div class="flex items-center gap-3.5 w-full md:w-auto z-10 opacity-75 hover:opacity-100 transition-opacity">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant border border-outline-variant/60 flex items-center justify-center font-headline-sm font-semibold">
+              3
+            </div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Langkah 3</span>
+<p class="text-label-lg font-label-lg text-on-surface font-medium">3. Alat Latihan</p>
+</div>
+</div>
+<div class="hidden md:block flex-1 h-[2px] bg-surface-container mx-4"></div>
+<!-- Step 4 -->
+<div class="flex items-center gap-3.5 w-full md:w-auto z-10 opacity-75 hover:opacity-100 transition-opacity">
+<div class="w-10 h-10 rounded-xl bg-surface-container text-on-surface-variant border border-outline-variant/60 flex items-center justify-center font-headline-sm font-semibold">
+              4
+            </div>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-medium">Langkah 4</span>
+<p class="text-label-lg font-label-lg text-on-surface font-medium">4. Kondisi Tubuh</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- STEP HEADER TITLE -->
+<div class="mb-8">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[18px]">sentiment_satisfied</span>
+<span>Mulai Perjalanan Kebugaran Tanpa Rasa Takut</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-extrabold tracking-tight">
+        Data Diri &amp; Profil Fisik Awal
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-1.5 max-w-2xl">
+        Informasi ini dipakai untuk menyusun porsi latihan yang aman, bertahap, dan sesuai kapasitas tubuhmu saat ini.
+      </p>
+</div>
+<!-- STEP 1: INTERACTIVE FORM & LIVE BMI DASHBOARD (2-COLUMN SPLIT) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-16">
+<!-- LEFT FORM INPUTS (7 Cols) -->
+<section class="lg:col-span-7 bg-surface-container-lowest rounded-2xl p-6 lg:p-8 border border-outline-variant/40 custom-shadow-ambient">
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Tanggal Lahir -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-semibold mb-1.5" for="birthdate">
+              Tanggal Lahir
+            </label>
+<div class="relative">
+<input class="w-full h-11 px-4 rounded-xl border border-outline-variant/60 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md outline-none transition-all" id="birthdate" type="date" value="1998-05-14"/>
+</div>
+<p class="flex items-center gap-1.5 font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary-container">info</span>
+<span>Untuk kalibrasi laju metabolisme dan denyut nadi optimal</span>
+</p>
+</div>
+<!-- Jenis Kelamin -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-semibold mb-2">
+              Jenis Kelamin
+            </label>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border-2 border-primary-container bg-primary-container/10 text-on-primary-container font-label-lg text-label-lg font-bold transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-primary-container">male</span>
+<span>Pria</span>
+</button>
+<button class="flex items-center justify-center gap-2.5 py-3 px-4 rounded-xl border border-outline-variant/60 bg-surface-container-lowest text-on-surface-variant font-label-lg text-label-lg font-medium hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined">female</span>
+<span>Wanita</span>
+</button>
+</div>
+</div>
+<!-- Tinggi & Berat Badan (Side-by-Side) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Tinggi Badan -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-semibold mb-1.5" for="height">
+                Tinggi Badan
+              </label>
+<div class="relative flex items-center">
+<input class="w-full h-11 pl-4 pr-14 rounded-xl border border-outline-variant/60 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-headline-sm font-semibold outline-none transition-all" id="height" type="number" value="170"/>
+<span class="absolute right-3 px-2 py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-lg font-bold">
+                  cm
+                </span>
+</div>
+</div>
+<!-- Berat Badan -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-semibold mb-1.5" for="weight">
+                Berat Badan
+              </label>
+<div class="relative flex items-center">
+<input class="w-full h-11 pl-4 pr-14 rounded-xl border border-outline-variant/60 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-headline-sm font-semibold outline-none transition-all" id="weight" type="number" value="68"/>
+<span class="absolute right-3 px-2 py-1 bg-surface-container text-on-surface-variant font-label-sm text-label-sm rounded-lg font-bold">
+                  kg
+                </span>
+</div>
+</div>
+</div>
+<!-- Tingkat Aktivitas Harian -->
+<div>
+<label class="block font-label-lg text-label-lg text-on-surface font-semibold mb-1.5" for="activity">
+              Aktivitas Fisik Sehari-hari Saat Ini
+            </label>
+<div class="relative">
+<select class="w-full h-11 px-4 rounded-xl border border-outline-variant/60 focus:border-primary-container focus:ring-2 focus:ring-primary-container/20 text-on-surface font-body-md outline-none bg-surface-container-lowest appearance-none cursor-pointer" id="activity">
+<option value="sedentary">Jarang Bergerak (Banyak Duduk / Pekerja Meja)</option>
+<option selected="" value="light">Aktivitas Ringan (Jalan santai / 1-2x per minggu)</option>
+<option value="moderate">Cukup Aktif (Olahraga ringan 3-5x per minggu)</option>
+<option value="high">Sangat Aktif (Latihan intensif hampir tiap hari)</option>
+</select>
+<span class="material-symbols-outlined pointer-events-none absolute right-3 top-3 text-on-surface-variant text-[20px]">
+                expand_more
+              </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5">
+              Jujur saja ya! Program akan dibangun perlahan tanpa langsung memforsir stamina.
+            </p>
+</div>
+</form>
+</section>
+<!-- RIGHT BMI LIVE PREVIEW (5 Cols) -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-2xl p-6 lg:p-8 border border-outline-variant/40 custom-shadow-ambient flex flex-col justify-between">
+<div>
+<!-- Header Card -->
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-2">
+<div class="p-2 rounded-xl bg-primary-container/10 text-primary-container">
+<span class="material-symbols-outlined text-[22px]">monitoring</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Estimasi BMI Kamu</h2>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+              Live Update
+            </span>
+</div>
+<!-- BMI Large Display Score -->
+<div class="text-center py-4 bg-surface-container-low/70 rounded-2xl mb-6 border border-outline-variant/20">
+<span class="font-display-lg text-display-lg font-black text-on-surface tracking-tight block">
+              23.5
+            </span>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container/20 text-on-primary-container mt-1">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check_circle</span>
+<span class="font-label-lg text-label-lg font-bold">Normal / Sehat</span>
+</div>
+</div>
+<!-- Colored Gauge Scale -->
+<div class="space-y-2 mb-6">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-surface-variant">
+<span>Indeks Massa Tubuh</span>
+<span class="font-semibold text-primary font-label-md text-label-md">Posisi: 23.5 (Normal)</span>
+</div>
+<!-- Gauge Segments Bar -->
+<div class="relative pt-3 pb-1">
+<!-- Gauge Indicator Arrow -->
+<div class="absolute top-0 left-[42%] -translate-x-1/2 flex flex-col items-center">
+<span class="material-symbols-outlined text-primary-container text-[18px]">arrow_drop_down</span>
+</div>
+<!-- 4-Part Segment Bar -->
+<div class="h-3 w-full rounded-full flex overflow-hidden gap-1 p-0.5 bg-surface-container">
+<div class="h-full bg-surface-variant rounded-l-full flex-1" title="Kurus (&lt; 18.5)"></div>
+<div class="h-full bg-primary-container flex-[1.4]" title="Normal (18.5 - 24.9)"></div>
+<div class="h-full bg-secondary-container flex-[1.2]" title="Berlebih (25.0 - 29.9)"></div>
+<div class="h-full bg-error rounded-r-full flex-1" title="Obesitas (&gt; 30)"></div>
+</div>
+</div>
+<!-- Segment Labels -->
+<div class="grid grid-cols-4 text-center font-label-sm text-label-sm text-on-surface-variant/80 pt-1">
+<div>&lt; 18.5<br/><span class="text-[10px]">Kurus</span></div>
+<div class="font-bold text-primary">18.5-24.9<br/><span class="text-[10px]">Normal</span></div>
+<div>25-29.9<br/><span class="text-[10px]">Berlebih</span></div>
+<div>&gt; 30<br/><span class="text-[10px]">Obesitas</span></div>
+</div>
+</div>
+<!-- Rentang Berat Ideal Box -->
+<div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/40 flex items-center justify-between mb-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[24px]">balance</span>
+<div>
+<span class="text-label-sm font-label-sm text-on-surface-variant block">Rentang Berat Ideal</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">54 - 72 kg</span>
+</div>
+</div>
+<span class="text-label-sm font-label-sm font-semibold text-primary bg-primary-fixed/40 px-2.5 py-1 rounded-lg">
+              Tinggi 170 cm
+            </span>
+</div>
+</div>
+<!-- Note Disclaimer -->
+<div class="flex items-start gap-2.5 p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant text-body-sm font-body-sm border border-outline-variant/30">
+<span class="material-symbols-outlined text-primary-container text-[20px] shrink-0 mt-0.5">verified</span>
+<p>
+<strong>Catatan:</strong> BMI adalah acuan awal dan tidak membedakan massa otot vs lemak tubuh. Panduan BugarKu memfokuskan pembentukan kebiasaan gerak yang konsisten.
+          </p>
+</div>
+</section>
+</div>
+<!-- PREVIEWS OF NEXT STEPS (Interactive Bento Journey Cards) -->
+<section class="space-y-8 mb-16">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold">Pratinjau Langkah Berikutnya</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">BugarKu menyesuaikan modul berdasarkan preferensi lengkap Anda di bawah ini.</p>
+</div>
+<span class="text-label-md font-label-md font-semibold text-primary px-3 py-1 bg-surface-container rounded-lg">
+          Langkah 2 s/d 4
+        </span>
+</div>
+<!-- STEP 2 PREVIEW: TUJUAN & TARGET SPESIFIK -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-8 border border-outline-variant/40 custom-shadow-ambient">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-5 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container font-headline-sm font-bold text-primary flex items-center justify-center">2</span>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Langkah 2: Tujuan &amp; Target Spesifik</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pilih fokus utama agar latihan terarah dan sesuai ritme tubuh</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">
+            Pilih 1 Tujuan Utama
+          </span>
+</div>
+<!-- 4 Selectable Goal Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<!-- Goal 1 (Active) -->
+<div class="relative p-5 rounded-2xl border-2 border-primary-container bg-primary-container/5 cursor-pointer transition-all hover:shadow-md">
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">local_fire_department</span>
+</div>
+<div class="flex items-center justify-between mb-1">
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface">Turun Berat Badan</h4>
+<span class="material-symbols-outlined text-primary-container text-[20px]">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bakar lemak secara sehat tanpa diet ekstrem dan stres berlebih.</p>
+</div>
+<!-- Goal 2 -->
+<div class="p-5 rounded-2xl border border-outline-variant/50 bg-surface-container-lowest hover:border-primary-container/50 cursor-pointer transition-all hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">fitness_center</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">Bentuk Otot</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tingkatkan massa otot, postur tegak, dan metabolisme basal.</p>
+</div>
+<!-- Goal 3 -->
+<div class="p-5 rounded-2xl border border-outline-variant/50 bg-surface-container-lowest hover:border-primary-container/50 cursor-pointer transition-all hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">bolt</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">Tingkatkan Stamina</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tidak gampang lelah saat naik tangga atau aktivitas harian panjang.</p>
+</div>
+<!-- Goal 4 -->
+<div class="p-5 rounded-2xl border border-outline-variant/50 bg-surface-container-lowest hover:border-primary-container/50 cursor-pointer transition-all hover:bg-surface-container-low">
+<div class="w-12 h-12 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center mb-3">
+<span class="material-symbols-outlined text-[28px]">favorite</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">Jaga Kesehatan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tetap aktif, tidur lebih nyenyak, dan bugar jangka panjang.</p>
+</div>
+</div>
+<!-- Target Sliders & Sub-inputs -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-surface-container-low/70 p-5 rounded-xl border border-outline-variant/30">
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="font-label-lg text-label-lg font-semibold text-on-surface" for="target-weight">Target Berat Badan Impian</label>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">64 kg</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full accent-primary-container h-2 bg-surface-container rounded-lg cursor-pointer" id="target-weight" max="90" min="50" type="range" value="64"/>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">Selisih: <strong>-4 kg</strong> dari berat awal saat ini (68 kg)</p>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="font-label-lg text-label-lg font-semibold text-on-surface" for="duration">Target Waktu Pencapaian</label>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-container">12 Minggu</span>
+</div>
+<div class="relative flex items-center">
+<input class="w-full accent-secondary-container h-2 bg-surface-container rounded-lg cursor-pointer" id="duration" max="24" min="4" step="2" type="range" value="12"/>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant mt-2">Laju aman: <strong>~0.33 kg/minggu</strong> (Sangat direkomendasikan &amp; realistis)</p>
+</div>
+</div>
+</div>
+<!-- STEP 3 PREVIEW: ALAT LATIHAN (MULTI-SELECT) -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-8 border border-outline-variant/40 custom-shadow-ambient">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-5 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container font-headline-sm font-bold text-primary flex items-center justify-center">3</span>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Langkah 3: Alat yang Kamu Miliki</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Latihan di rumah bisa tanpa alat sama sekali atau memakai perlengkapan sederhana</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+            Bisa pilih lebih dari 1
+          </span>
+</div>
+<!-- Multi-select Equipment Chips -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5">
+<!-- Item 1 (Selected) -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border-2 border-primary-container bg-primary-container/10 text-on-surface cursor-pointer font-label-lg text-label-lg font-bold">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container">accessibility_new</span>
+<span>Tanpa Alat (Bodyweight)</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_box</span>
+</div>
+<!-- Item 2 (Selected) -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border-2 border-primary-container bg-primary-container/10 text-on-surface cursor-pointer font-label-lg text-label-lg font-bold">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary-container">self_improvement</span>
+<span>Matras Yoga</span>
+</div>
+<span class="material-symbols-outlined text-primary-container text-[18px]">check_box</span>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface cursor-pointer font-label-lg text-label-lg font-medium transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant">sports_gymnastics</span>
+<span>Dumbbell Ringan / Botol Air</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">check_box_outline_blank</span>
+</div>
+<!-- Item 4 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface cursor-pointer font-label-lg text-label-lg font-medium transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant">all_inclusive</span>
+<span>Resistance Band</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">check_box_outline_blank</span>
+</div>
+<!-- Item 5 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface cursor-pointer font-label-lg text-label-lg font-medium transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant">expand</span>
+<span>Pull-up Bar</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">check_box_outline_blank</span>
+</div>
+<!-- Item 6 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface cursor-pointer font-label-lg text-label-lg font-medium transition-colors">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant">fitness_center</span>
+<span>Barbel</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">check_box_outline_blank</span>
+</div>
+<!-- Item 7 -->
+<div class="flex items-center justify-between p-3.5 rounded-xl border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface cursor-pointer font-label-lg text-label-lg font-medium transition-colors sm:col-span-2">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-on-surface-variant">domain</span>
+<span>Akses Fasilitas Gym Lengkap</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant text-[18px]">check_box_outline_blank</span>
+</div>
+</div>
+</div>
+<!-- STEP 4 PREVIEW: KONDISI TUBUH & KESIAPAN -->
+<div class="bg-surface-container-lowest rounded-2xl p-6 lg:p-8 border border-outline-variant/40 custom-shadow-ambient">
+<div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 pb-5 border-b border-outline-variant/30 mb-6">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-xl bg-surface-container font-headline-sm font-bold text-primary flex items-center justify-center">4</span>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Langkah 4: Kondisi Fisik &amp; Preferensi Latihan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gerakan akan otomatis disaring jika ada bagian tubuh yang sensitif</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+            Bebas Cedera &amp; Waktu
+          </span>
+</div>
+<!-- Health / Restriction Chips -->
+<div class="flex flex-wrap gap-2.5 mb-6">
+<div class="px-4 py-2.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer flex items-center gap-2">
+<span>Nyeri Lutut / Sendi</span>
+</div>
+<div class="px-4 py-2.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer flex items-center gap-2">
+<span>Nyeri Punggung Bawah</span>
+</div>
+<div class="px-4 py-2.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer flex items-center gap-2">
+<span>Nyeri Bahu / Leher</span>
+</div>
+<div class="px-4 py-2.5 rounded-full border-2 border-primary-container bg-primary-container/10 text-on-primary-container font-label-md text-label-md font-bold cursor-pointer flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check</span>
+<span>Pemula Total (Belum Pernah Rutin)</span>
+</div>
+<div class="px-4 py-2.5 rounded-full border-2 border-primary-container bg-primary-container/10 text-on-primary-container font-label-md text-label-md font-bold cursor-pointer flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary-container">check</span>
+<span>Waktu Terbatas (&lt; 20 Menit/Sesi)</span>
+</div>
+<div class="px-4 py-2.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest hover:bg-surface-container-low text-on-surface font-label-md text-label-md cursor-pointer flex items-center gap-2">
+<span>Tidak Ada Keluhan (Kondisi Prima)</span>
+</div>
+</div>
+<!-- Amber / Yellow Medical Disclaimer Box -->
+<div class="p-4 rounded-xl bg-secondary-fixed/20 border border-secondary-container/40 flex items-start gap-3 text-on-secondary-container">
+<span class="material-symbols-outlined text-secondary-container text-[24px] shrink-0 mt-0.5">warning</span>
+<div class="font-body-md text-body-md">
+<strong class="font-semibold block text-secondary">Penting untuk Diketahui:</strong>
+            Konsultasikan dengan dokter jika Anda memiliki riwayat hipertensi, cedera tulang belakang, atau kondisi medis khusus sebelum memulai rangkaian latihan fisik. BugarKu bertujuan membangun mobilitas harian yang aman.
+          </div>
+</div>
+</div>
+</section>
+</main>
+<!-- STICKY BOTTOM ACTION FOOTER -->
+<footer class="sticky bottom-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md border-t border-outline-variant/30 py-4 px-6">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<!-- Back Button -->
+<div>
+<button class="flex items-center gap-2 px-5 py-3 rounded-xl border border-outline-variant/60 text-on-surface font-label-lg text-label-lg font-semibold hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+<span>Sebelumnya</span>
+</button>
+</div>
+<!-- Forward & Instant Plan Generator CTA -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:block text-right">
+<span class="text-label-sm font-label-sm text-on-surface-variant block">100% Personal &amp; Otomatis</span>
+<span class="text-label-md font-label-md font-semibold text-primary">Gratis &amp; Langsung Siap dalam 10 Detik</span>
+</div>
+<button class="flex items-center gap-2.5 px-7 py-3.5 rounded-xl bg-primary-container text-surface-container-lowest font-headline-sm font-bold custom-shadow-glow hover:bg-primary transition-all active:scale-[0.98]" type="button">
+<span>Buat Program Saya</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</footer>
+<!-- Light Vanilla Script for Live BMI calculation interactivity -->
+<script>
+    const heightInput = document.getElementById('height');
+    const weightInput = document.getElementById('weight');
+    
+    function calculateBMI() {
+      if (!heightInput || !weightInput) return;
+      const hMeters = parseFloat(heightInput.value) / 100;
+      const wKg = parseFloat(weightInput.value);
+      if (hMeters > 0 && wKg > 0) {
+        const bmi = (wKg / (hMeters * hMeters)).toFixed(1);
+        // Visual indicator update could link here smoothly
+      }
+    }
+
+    if (heightInput && weightInput) {
+      heightInput.addEventListener('input', calculateBMI);
+      weightInput.addEventListener('input', calculateBMI);
+    }
+  </script>
+</body></html>

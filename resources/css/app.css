@@ -1,0 +1,53 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    /* Font: Poppins untuk judul, Inter untuk body */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-headline: 'Poppins', 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+    /* Palet BugarKu */
+    --color-primary: #10B981;
+    --color-primary-dark: #047857;
+    --color-accent: #F97316;
+    --color-navy: #0F172A;
+    --color-surface: #F8FAFC;
+    --color-muted: #64748B;
+    --color-success: #22C55E;
+    --color-warning: #F59E0B;
+    --color-danger: #EF4444;
+
+    /* Radius: kartu 16px, tombol 12px */
+    --radius-card: 16px;
+    --radius-button: 12px;
+
+    /* Bayangan lembut */
+    --shadow-soft: 0 4px 16px rgba(15, 23, 42, 0.06);
+    --shadow-card: 0 2px 8px rgba(15, 23, 42, 0.05);
+
+    /* Warna status BMI */
+    --color-bmi-kurus: #38BDF8;
+    --color-bmi-normal: #10B981;
+    --color-bmi-gemuk: #EAB308;
+    --color-bmi-obesitas: #EF4444;
+}
+
+@layer base {
+    /* Alpine: sembunyikan elemen sebelum inisialisasi */
+    [x-cloak] {
+        display: none !important;
+    }
+
+    /* Slider warna hijau (sesuai desain BMI) */
+    input[type='range'] {
+        accent-color: var(--color-primary);
+    }
+
+    ::selection {
+        background-color: var(--color-accent);
+        color: #ffffff;
+    }
+}
